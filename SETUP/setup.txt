@@ -155,6 +155,14 @@ CALPULSER_ON=0 // (DEFAULT=0) 0: no calpulser. 1: use 2012 pulser. 2: use 2011 V
  
 CALPUL_AMP=0.15 // (DEFAULT=0.15) amplitude modifier for the calpulser, to match the power of real pulser 
 
+ANTENNA_MODE=6 // (DEFAULT=0) Antenna to be used
+
+VPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_BVpol_RealizedGainAndPhase_Copol_Custom.txt" // (DEFAULT=CustomFileinAra) Filepath to read in any gain pattern from setup file for VPOL
+
+VTOP_BEAMPATTERN="./data/antennas/realizedGain/ARA_TVpol_RealizedGainAndPhase_Copol_Custom.txt" // (DEFAULT=CustomFileinAra)
+
+HPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_dipoletest1_output.txt" // Filepath to read in any gain pattern from setup file for HPOL
+
 // writing events (user guide: see section 3.10 page 17) //
  
 DATA_SAVE_MODE=0 // (DEFAULT=0) 0: save waveforms and primitive spectra to AraTree2 (include spectra at different stages of simulation). 1: save only waveforms after trigger. 2: save just physics data per event. 
