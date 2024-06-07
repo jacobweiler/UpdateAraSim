@@ -713,6 +713,15 @@ void Settings::ReadFile(string setupfile) {
               else if (label == "ANTENNA_MODE"){
                   ANTENNA_MODE = atoi(line.substr(line.find_first_of("=") + 1).c_str());
               }
+              else if (label == "VPOL_BEAMPATTERN"){
+                    VPOL_BEAMPATTERN = atoi(line.substr(line.find_first_of("=") + 1).c_str());
+              }
+              else if (label == "VTOP_BEAMPATTERN"){
+                    VTOP_BEAMPATTERN = atoi(line.substr(line.find_first_of("=") + 1).c_str());
+              }
+              else if (label == "HPOL_BEAMPATTERN"){
+                    HPOL_BEAMPATTERN = atoi(line.substr(line.find_first_of("=") + 1).c_str());
+              }
               else if (label == "IMPEDANCE_RX_VPOL"){
                   IMPEDANCE_RX_VPOL = atoi(line.substr(line.find_first_of("=") + 1).c_str());
               }              

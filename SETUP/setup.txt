@@ -161,7 +161,7 @@ VPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_BVpol_RealizedGainAndPhase_Co
 
 VTOP_BEAMPATTERN="./data/antennas/realizedGain/ARA_TVpol_RealizedGainAndPhase_Copol_Custom.txt" // (DEFAULT=CustomFileinAra)
 
-HPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_dipoletest1_output.txt" // Filepath to read in any gain pattern from setup file for HPOL
+HPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_dipoletest1_output.txt" // (DEFAULT=CustomFileinAra) Filepath to read in any gain pattern from setup file for HPOL
 
 // writing events (user guide: see section 3.10 page 17) //
  
