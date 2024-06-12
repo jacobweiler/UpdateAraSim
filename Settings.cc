@@ -35,6 +35,9 @@ void Settings::Initialize() {
 
   DEBUG=false;                   // debugging option
 outputdir="outputs"; // directory where outputs go
+HPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_dipoletest1_output.txt"; // Default to original Ara Data
+VTOP_BEAMPATTERN="./data/antennas/realizedGain/ARA_bicone6in_output.txt"; // Default to original Ara Data
+VPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_bicone6in_output.txt"; // Default to original Ara Data
  FREQ_LOW_SEAVEYS=200.E6;
  FREQ_HIGH_SEAVEYS=1200.E6;
  BW_SEAVEYS=FREQ_HIGH_SEAVEYS-FREQ_LOW_SEAVEYS;
@@ -714,13 +717,37 @@ void Settings::ReadFile(string setupfile) {
                   ANTENNA_MODE = atoi(line.substr(line.find_first_of("=") + 1).c_str());
               }
               else if (label == "VPOL_BEAMPATTERN"){
-                    VPOL_BEAMPATTERN = atoi(line.substr(line.find_first_of("=") + 1).c_str());
+                    // All of this just to get the filepath.. Maybe can be more simple but works! 
+                    size_t pos = line.find("="); // Variable position
+                    size_t comment_pos = line.find("//", pos); // Comment Position
+                    string fileloc = (comment_pos != string::npos) ? line.substr(pos + 1, comment_pos - pos - 1) : line.substr(pos + 1);
+                    size_t start = fileloc.find_first_not_of(" \t\"");
+                    size_t end = fileloc.find_last_not_of(" \t\"");
+                    fileloc = fileloc.substr(start, end - start + 1);
+
+                    VPOL_BEAMPATTERN = fileloc;
               }
               else if (label == "VTOP_BEAMPATTERN"){
-                    VTOP_BEAMPATTERN = atoi(line.substr(line.find_first_of("=") + 1).c_str());
+                    // All of this just to get the filepath.. Maybe can be more simple but works! 
+                    size_t pos = line.find("="); // Variable position
+                    size_t comment_pos = line.find("//", pos); // Comment Position
+                    string fileloc = (comment_pos != string::npos) ? line.substr(pos + 1, comment_pos - pos - 1) : line.substr(pos + 1);
+                    size_t start = fileloc.find_first_not_of(" \t\"");
+                    size_t end = fileloc.find_last_not_of(" \t\"");
+                    fileloc = fileloc.substr(start, end - start + 1);
+
+                    VTOP_BEAMPATTERN = fileloc;
               }
               else if (label == "HPOL_BEAMPATTERN"){
-                    HPOL_BEAMPATTERN = atoi(line.substr(line.find_first_of("=") + 1).c_str());
+                    // All of this just to get the filepath.. Maybe can be more simple but works! 
+                    size_t pos = line.find("="); // Variable position
+                    size_t comment_pos = line.find("//", pos); // Comment Position
+                    string fileloc = (comment_pos != string::npos) ? line.substr(pos + 1, comment_pos - pos - 1) : line.substr(pos + 1);
+                    size_t start = fileloc.find_first_not_of(" \t\"");
+                    size_t end = fileloc.find_last_not_of(" \t\"");
+                    fileloc = fileloc.substr(start, end - start + 1);
+
+                    HPOL_BEAMPATTERN = fileloc;
               }
               else if (label == "IMPEDANCE_RX_VPOL"){
                   IMPEDANCE_RX_VPOL = atoi(line.substr(line.find_first_of("=") + 1).c_str());

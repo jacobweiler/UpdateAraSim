@@ -49,8 +49,8 @@ core_y=10000
 
 ANTENNA_MODE=6 // (DEFAULT=0) Antenna to be used
 
-VPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_BVpol_RealizedGainAndPhase_Copol_Custom.txt" // (DEFAULT=CustomFileinAra) Filepath to read in any gain pattern from setup file for VPOL
+VPOL_BEAMPATTERN="/users/PAS1977/jacobweiler/GENETIS/test_ara_beampatterns/antenna_dat_5.txt"// (DEFAULT=CustomFileinAra)" Filepath to read in any gain pattern from setup file for VPOL
 
-VTOP_BEAMPATTERN="./data/antennas/realizedGain/ARA_TVpol_RealizedGainAndPhase_Copol_Custom.txt" // (DEFAULT=CustomFileinAra)
+VTOP_BEAMPATTERN="/users/PAS1977/jacobweiler/GENETIS/test_ara_beampatterns/antenna_dat_5.txt" // (DEFAULT=CustomFileinAra)
 
-HPOL_BEAMPATTERN="./data/antennas/realizedGain/ARA_dipoletest1_output.txt" // (DEFAULT=CustomFileinAra) Filepath to read in any gain pattern from setup file for HPOL
+HPOL_BEAMPATTERN="/users/PAS1977/jacobweiler/GENETIS/test_ara_beampatterns/antenna_dat_1.txt" // (DEFAULT=CustomFileinAra) Filepath to read in any gain pattern from setup file for HPOL
